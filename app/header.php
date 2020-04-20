@@ -5,7 +5,9 @@ $menu_active = $page == "menu" ? "active" : "";
 $keranjang_active = $page == "keranjang" ? "active" : ""; 
 $home_active = $page == "home" ? "active" : ""; 
 $login_active = $page == "login" ? "active" : ""; 
-$myprofile = $page == "myprofile" ? "active" : ""; 
+$myprofile = $page == "myprofile" ? "active" : "";
+$kontak_active = $page == "kontak_active" ? "active" : "";
+
 
 $header_md = isset($_SESSION['user']) ? "6" :"7";
 
@@ -15,13 +17,13 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
 
     <div class="row">
 
-        <div class="col-md-<?=$header_md?>">
+        <div class="col-md-<?=$header_md?> col-sm-<?=$header_md?>">
             
             <div id="logo-header">
 
                 <a href="../index.php">
                 
-                    <img src="../resource/img/output-onlinepngtools.png" alt="image-logo">
+                    <img class="image-fluid" src="../resource/img/output-onlinepngtools.png" alt="image-logo">
 
                 </a>
     
@@ -29,7 +31,7 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
             
         </div>
 
-        <div class="col-md-1 top">
+        <div class="col-md-1 top col-sm-1 nav-item ">
             
             <div id="contact-us">
     
@@ -39,7 +41,7 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
             
         </div>
 
-        <div class="col-md-1 top">
+        <div class="col-md-1 top col-sm-1 nav-item ">
             <div id="nav-coffe">
     
                 <a class=" text-center <?=$home_active?> ubuntu-font" href="index.php?page=home">Home</a>
@@ -48,16 +50,16 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
             
         </div>
 
-        <div class="col-md-1 top">
+        <div class="col-md-1 top col-sm-1 nav-item ">
             
             <div id="menu">
-                <a class="ubuntu-font <?=$menu_active?>" href="index.php?page=menu">Menu</a> 
+                <a class=" ubuntu-font <?=$menu_active?>" href="index.php?page=menu">Menu</a> 
     
             </div>
             
         </div>
 
-        <div class="col-md-1 top">
+        <div class="col-md-1 top col-sm-1 nav-item ">
 
             <div id="keranjang">
 
@@ -69,7 +71,7 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
 
         <?php if(isset($_SESSION['user'])): ?>
 
-            <div class="col-md-1 top">
+            <div class="col-md-1 top col-sm-1 nav-item ">
 
                 <div id="login">
 
@@ -79,7 +81,7 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
 
             </div>
 
-            <div class="col-md-1 top">
+            <div class="col-md-1 top col-sm-1 nav-item ">
 
                 <div id="myprofile">
 
@@ -91,7 +93,7 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
 
         <?php else: ?>
         
-            <div class="col-md-1 top">
+            <div class="col-md-1 top col-sm-1 nav-item ">
 
                 <div id="login">
 

@@ -1,46 +1,210 @@
 
-body{
-    color: #F5F5F5;
-}
-#logo-header img {
-    width: 127px;
-    top: 0px;
-}
+@media only screen and (min-width:300px){
 
-#nav-coffe a {
-    margin-top: 50px;
-    margin-bottom: 0px;
+    .nav-item {
+        width: 138px;
+        padding: 10px;
+        margin: 6px;
+        margin-left: 15px;
+        border: 2px brown solid;
+        text-align: center;
     }
 
-#menu a {
-    margin-top: 50px;
-    margin-bottom: 0px;
+    #keterangan{
+        color: white;
+        font-size: 15px;
+        text-align: left;
     }
 
-#contact-us a {
-    margin-top: 50px;
-    margin-bottom: 0px;
+    #logo-footer {
+        color: white;
+        position: relative;
+        text-align: center;
+        padding: 15px 0 0;
+        font-size: 45px;
+    }
+
+    footer #frame-footer {
+        padding: 15px;
+        margin-top: 5%;
+        background-color: #B85A3C;
+    }
+
+    #logo-footer span {
+        color: #6C63FF;
+    }
+
+    #button-menu {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 0px;
+    }
+
+    #button-menu .button {
+        width: 10%;
+        border: none;
+        background-color: #B85A3C;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+
+    div#button-menu {
+        text-align: center;
+        margin: 30px;
+        padding: 10px;
+    }
+
+    div#paragraf-1 {
+        margin-top: 2rem;
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    div#paragraf-2 {
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .frame-gambar {
+        text-align: center;
+    }
+
+    .frame-gambar img {
+        border-style: none;
+        width: 65%;
+    }
+
+    .frame-keterangan p {
+        margin: 0;
+    }
+
+    h3.ubuntu-font.text-center {
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    div#frame-main-gambar-1 {
+        text-align: center;
+    }
+
+    #frame-main-gambar-1 img {
+        width: 65%;
+    }
+
+    #frame-main-paragaf-1 p {
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    p#paragraf-row-2 {
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    div#frame-main-gambar-2 {
+        text-align: center;
+    }
+
+    img#gambar-2 {
+        width: 60%;
+    }
+
+    #logo-header a img.image-fluid {
+        width: 30%;
+    }
+
+    .text-brown{
+        color: #B85A3C;
+    }
+    
+    div#logo-header {
+        text-align: center;
+    }
+    
+    .ubuntu-font{
+        font-family:'ubuntu';
+        color: #B85A3C;
+    }
+
+    .font-trocchi{
+        font-family:'trocchi';
+        color: rgb(66, 65, 65);
+    }
+
+    #banner-img {
+        vertical-align: middle;
+        border-style: none;
+        width: 100%;
+    }
+
+
+    @font-face{
+        font-family:'ubuntu';
+        src:url('../font/ubuntu/Ubuntu-B.ttf');
+    }
+
+    @font-face{
+        font-family:'trocchi';
+        src:url('../font/trocchi/Trocchi.otf');
+    }
+
 }
 
-.font-trocchi{
-    font-family:'trocchi';
+@media only screen and (min-width:576px){
+
+    .nav-item{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .frame-keterangan p {
+        text-align: justify;
+    }
+
 }
 
-@font-face{
-    font-family:'ubuntu';
-    src:url('../font/ubuntu/Ubuntu-B.ttf');
+@media only screen and (min-width:768px){
+
+    .nav-item{
+        margin: 12px;
+    }
+    
 }
 
-@font-face{
-    font-family:'trocchi';
-    src:url('../font/trocchi/Trocchi.otf');
-}
+@media only screen and (min-width:1024px){
 
+    div#logo-header {
+        text-align: left;
+    }
 
-@media only screen and (min-width:900px){
+    .frame-gambar img {
+        width: 100%;
+    }
+    
+    #frame-main-gambar-1 img {
+        width: 75%;
+    }
+    
+    img#gambar-2 {
+        width: 100%;
+    }
+
+    .nav-item{
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
 
     body{
         color: #F5F5F5;
+    }
+
+    .text-brown{
+        color: #B85A3C;
     }
 
     .frame-gambar {
@@ -63,7 +227,7 @@ body{
     }
 
     .top{
-        margin-top: 50px;
+        margin-top: 70px;
     }
     
     #nav-coffe a {
