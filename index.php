@@ -23,11 +23,11 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="row mt-5">
 
             <div id="mark-kiri" class="col-md-6 col-sm-12 col-xs-12">
                 
-                <img id="header-wave-image" class="image-fluid" src="resource/img/undraw_coffee_break_j3of 1.svg" alt="wave.png">
+                <img id="image-coffe" class="image-fluid" src="resource/img/undraw_coffee_break_j3of 1.svg" alt="wave.png">
 
             </div>
 
@@ -39,9 +39,9 @@
 
                 </div>
 
-                <div id="bold-font-logo">
+                <div id="bold-font-paragraf">
 
-                    <p class="ubuntu-font paragraf">
+                    <p class="ubuntu-font paragraf text-brown">
                         Bagi sebagian besar masyarakat indonesia maupun dunia, kopi sudah seperti menjadi teman hidup. Melewati hari tanpa menyeruput kopi rasanya seperti ada yang kurang. Urusan minum kopi juga merupakan hal yang sangat personal dimana masing masing orang memiliki kesukaan masing-masing. Ada yang suka kopi asli tanpa campuran susu atau kremer, dan ada juga yang sebaliknya.
                     </p>
 

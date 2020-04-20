@@ -61,9 +61,146 @@ a.button-landing.ubuntu-font:hover {
 }
 
 
+/* 5 inch down phone */
+@media only screen and (max-width:400px){
+
+
+    body{
+        overflow-x:hidden!important;
+    }
+
+    img#image-coffe {
+        width: 100%;
+        padding: 20px;
+        margin-top: 15px;
+    }
+    
+    img#header-wave-image {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    div#mark-kanan {
+        margin: 10px;
+    }
+
+    p.ubuntu-font.paragraf {
+        margin-bottom: 20px;
+    }
+
+    h2.ubuntu-font {
+        margin-bottom: 5px;padding: 10px;
+    }
+
+    @font-face{
+        font-family:'ubuntu';
+        src:url('../font/ubuntu/Ubuntu-B.ttf');
+    }
+
+    @font-face{
+        font-family:'trocchi';
+        src:url('../font/trocchi/Trocchi.otf');
+    }
+    .trocchi-font{
+        font-family:'trocchi';
+    }
+    .ubuntu-font{
+        font-family:'ubuntu';
+    }
+
+    .text-brown{
+        color: #B85A3C!important;
+    }
+
+    .brown{
+        color: #B85A3C;
+    }
+
+
+}
+
+
+/* 5 inch up phone  */
+@media only screen and (min-width:400px){
+    body{
+        overflow-x:hidden!important;
+    }
+
+    img#image-coffe {
+        width: 100%;
+        padding: 20px;
+        margin-top: 15px;
+    }
+    
+    img#header-wave-image {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    div#mark-kanan {
+        margin: 10px;
+    }
+
+    p.ubuntu-font.paragraf {
+        margin-bottom: 20px;
+    }
+
+    h2.ubuntu-font {
+        margin-bottom: 5px;padding: 10px;
+    }
+
+    @font-face{
+        font-family:'ubuntu';
+        src:url('../font/ubuntu/Ubuntu-B.ttf');
+    }
+
+    @font-face{
+        font-family:'trocchi';
+        src:url('../font/trocchi/Trocchi.otf');
+    }
+    .trocchi-font{
+        font-family:'trocchi';
+    }
+    .ubuntu-font{
+        font-family:'ubuntu';
+    }
+
+    .text-brown{
+        color: #B85A3C!important;
+    }
+
+    .brown{
+        color: #B85A3C;
+    }
+
+}
+
+/* Tablet screen portrait */
+@media only screen and (min-width:768px){
+
+    div#mark-kanan {
+        margin: 0;
+        font-size: 15px;
+    }
+    
+    h2.ubuntu-font {
+        font-size: 2px;
+    }
+
+    .text-brown{
+        color: #B85A3C!important;
+    }
+
+    .brown{
+        color: #B85A3C;
+    }
+
+}
 
 
 
+
+/* Desktop responsive */
 @media only screen and (min-width:900px){
 
     body{
@@ -81,15 +218,12 @@ a.button-landing.ubuntu-font:hover {
         font-family:'ubuntu';
     }
     
-    #mark-kanan {
-        justify-content: center;
-        margin-top: 110px;
+    div#mark-kanan {
+        margin: 0px;
+        padding: 10px;
+        height: 55%;
     }
     
-    #mark-kiri {
-        padding-right: 100px;
-        margin-top: 68px;
-    }
     
     #bold-font-logo h2 {
         text-align: center;font-size: 50px;color: #B85A3C;
@@ -114,6 +248,18 @@ a.button-landing.ubuntu-font:hover {
     #button {
         text-align: center;
         margin-bottom: 20px;
+    }
+
+    p.ubuntu-font.paragraf.text-brown {
+        font-size: 17px;
+    }
+
+    .text-brown{
+        color: #B85A3C!important;
+    }
+
+    .brown{
+        color: #B85A3C;
     }
     
     a.button-landing.ubuntu-font {
