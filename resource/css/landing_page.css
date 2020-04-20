@@ -1,0 +1,143 @@
+body{
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+}
+#header-wave-image {
+    width: 103%;
+    height: 100%;
+    padding-right: 13px;
+}
+
+.trocchi-font{
+    font-family:'trocchi';
+}
+
+#mark-kanan {
+    justify-content: center;
+}
+
+#mark-kanan {
+    margin-top: 50px;
+}
+
+#bold-font-logo h2 {
+    text-align: center;font-size: 50px;color: #B85A3C;
+}
+#bold-font-logo .ubuntu-font span {
+    color: #6C63FF;
+}
+
+#bold-font-logo p {
+    color: #B85A3C;
+}
+
+a.button-landing.ubuntu {
+    border: none;
+    background-color: #B85A3C;
+    padding: 9px;
+    color: white;
+    border-radius: 6px;
+}
+
+#button {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a.button-landing.ubuntu-font {
+    border: none;
+    background-color: #B85A3C;
+    padding: 10px;
+    color: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+a.button-landing.ubuntu-font:hover {
+    background-color:#6C63FF;
+}
+
+.ubuntu-font{
+    font-family:'ubuntu';
+}
+
+
+
+
+
+@media only screen and (min-width:900px){
+
+    body{
+        overflow-x: hidden;
+        background-color: #F5F5F5;
+    }
+    #header-wave-image {
+        width: 103%;
+        height: 100%;
+    }
+    .trocchi-font{
+        font-family:'trocchi';
+    }
+    .ubuntu-font{
+        font-family:'ubuntu';
+    }
+    
+    #mark-kanan {
+        justify-content: center;
+        margin-top: 110px;
+    }
+    
+    #mark-kiri {
+        padding-right: 100px;
+        margin-top: 68px;
+    }
+    
+    #bold-font-logo h2 {
+        text-align: center;font-size: 50px;color: #B85A3C;
+    }
+    #bold-font-logo .ubuntu-font span {
+        color: #6C63FF;
+    }
+    
+    #bold-font-logo p {
+        color: #B85A3C;
+    }
+    
+    a.button-landing.ubuntu {
+        border: none;
+        background-color: #B85A3C;
+        padding: 9px;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+    
+    #button {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    a.button-landing.ubuntu-font {
+        border: none;
+        background-color: #B85A3C;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        border-radius: 3px;
+    }
+    a.button-landing.ubuntu-font:hover {
+        background-color:#6C63FF;
+        transition: 0.3s;
+    }
+
+    @font-face{
+        font-family:'ubuntu';
+        src:url('../font/ubuntu/Ubuntu-B.ttf');
+    }
+
+    @font-face{
+        font-family:'trocchi';
+        src:url('../font/trocchi/Trocchi.otf');
+    }
+    
+}
+

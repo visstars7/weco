@@ -1,0 +1,283 @@
+
+body{
+    color: #F5F5F5;
+}
+#logo-header img {
+    width: 127px;
+    top: 0px;
+}
+
+#nav-coffe a {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    }
+
+#menu a {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    }
+
+#contact-us a {
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.font-trocchi{
+    font-family:'trocchi';
+}
+
+@font-face{
+    font-family:'ubuntu';
+    src:url('../font/ubuntu/Ubuntu-B.ttf');
+}
+
+@font-face{
+    font-family:'trocchi';
+    src:url('../font/trocchi/Trocchi.otf');
+}
+
+
+@media only screen and (min-width:900px){
+
+    body{
+        color: #F5F5F5;
+    }
+
+    .frame-gambar {
+        padding: 35% 10% 0;
+    }
+
+    .ubuntu-font{
+        font-family:'ubuntu';
+        color: rgb(66, 65, 65);
+    }
+
+    .font-trocchi{
+        font-family:'trocchi';
+        color: rgb(66, 65, 65);
+    }
+
+    #logo-header img {
+        width: 127px;
+        top: 0px;
+    }
+
+    .top{
+        margin-top: 50px;
+    }
+    
+    #nav-coffe a {
+        margin-top: 50px;
+        margin-bottom: 0px;
+        color: #B85A3C;
+        text-decoration:none;
+        transition: 0.3s;
+    }
+    
+    #menu a {
+        margin-top: 50px;
+        margin-bottom: 0px;
+        color: #B85A3C;
+        text-decoration:none;
+        transition: 0.3s;
+    }
+    
+    #contact-us a {
+        margin-top: 50px;
+        margin-bottom: 0px;
+        color: #B85A3C;
+        text-decoration:none;
+        transition: 0.3s;
+    }
+
+    #nav-coffe a:hover {
+        color: #6C63FF;
+    }
+    
+    #menu a:hover {
+        color: #6C63FF;
+    }
+    
+    #contact-us a:hover {
+        color: #6C63FF;
+    }
+
+    @font-face{
+        font-family:'ubuntu';
+        src:url('../font/ubuntu/Ubuntu-B.ttf');
+    }
+
+    @font-face{
+        font-family:'trocchi';
+        src:url('../font/trocchi/Trocchi.otf');
+    }
+    
+    .banner-coffe {
+        text-align: center;
+    }
+    
+    .banner-coffe #banner-img {
+        width: 100%;
+        height: auto;
+        border-radius: 3px;
+    }
+
+    #paragraf-1 p {
+        margin: 60px 10px 0px;
+        text-align: justify;
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
+
+    #paragraf-2 p {
+        margin-top: 85px;
+        margin-bottom: 0px;
+        text-align: justify;
+    }
+
+    .frame-keterangan {
+    padding: 40% 0 0;
+    }
+
+    section#page-2 {
+        margin-top: 20px;
+    }
+
+    h3.ubuntu-font.text-center {
+        color: #B85A3C;
+        padding-bottom: 15px;
+    }
+
+    #page-3 {
+        margin-top: 20px;
+    }
+    
+    #frame-main-gambar-1 {
+        height: 500px;
+        padding: 35% 0 0;
+    }
+    
+    #frame-main-paragaf-1 {
+        padding: 40% 0 0;
+    }
+    
+    #frame-main-paragaf-1 h3 {
+        color: #B85A3C;
+    }
+    
+    #frame-main-gambar-2 {
+        padding: 0 20% 0;
+    }
+
+    #paragraf-row-2 {
+        text-align: right;
+    }
+
+    #gambar-2 {
+        width: 90%;
+    }
+
+    #button-menu {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 0px;
+    }
+
+    #button-menu .button {
+        width: 10%;
+        border: none;
+        background-color: #B85A3C;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+
+    #button-menu .button:hover {
+        background-color: #6C63FF;
+    }
+
+    #keranjang a {
+        color: #b85a3c;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    #keranjang a:hover {
+        color: #6C63FF;
+    }
+
+    .active{
+        color: #6C63FF!important;
+    }
+    
+    #login {
+        text-align: center;
+    }
+
+    #login a{
+        color: #b85a3c;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    #login a:hover{
+        color: #6C63FF;
+    }
+
+    #logo-footer {
+        color: white;
+        position: relative;
+        text-align: center;
+        padding: 17px 0 0;
+        font-size: 50px;
+    }
+
+    footer #frame-footer {
+        padding: 15px;
+        margin-top: 5%;
+        background-color: #B85A3C;
+    }
+
+    #logo-footer span {
+        color: #6C63FF;
+    }
+    
+    #keterangan {
+        color: white;
+        padding: 21px 0px 0px;
+        text-align: justify;
+    }
+
+
+    #contact-us {
+        width: 100px;
+    }
+    
+    
+    div#nav-coffe {
+        text-align: center;
+    }
+    
+    div#menu {
+        text-align: center;
+    }
+
+    a.ubuntu-font {
+        color: #b85a3c;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+    a.ubuntu-font:hover {
+        color:#6C63FF
+    }
+
+    .top {
+        padding: 0px;
+    }
+
+    div#keranjang {
+        text-align: center;
+    }
+}

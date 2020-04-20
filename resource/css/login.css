@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+}
+
+.login-form {
+    margin: 3% 27% 0;
+    padding: 23px;
+    height: 250px;
+}
+
+#frame-login {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.element-form {
+    padding: 10px;
+}
+
+.input-form {
+    width: 350px;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+
+.button-submit {
+    border: none;
+    padding: 10px;
+    width: 100px;
+    background-color: #b85a3c;
+    color: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.button-submit:hover {
+    background-color: #6C63FF;
+}
+
+.ubuntu{
+    font-family: ubuntu;
+}
+.trocchi{
+    font-family:trocchi;
+}
+
+@font-face{
+    font-family:'ubuntu';
+    src:url('../font/ubuntu/Ubuntu-B.ttf');
+}
+
+@font-face{
+    font-family:'trocchi';
+    src:url('../font/trocchi/Trocchi.otf');
+}
+
+
+#image-wave-top {
+    width: 100%;
+}
+
+h3 span {
+    color: #6C63FF;
+}
+
+h3.ubuntu {
+    color: #B85A3C;
+}
+
+a.button-submit.ubuntu {
+    text-decoration: none;
+    color: white;
+}
