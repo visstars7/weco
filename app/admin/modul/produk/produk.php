@@ -9,13 +9,13 @@ $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
 
 <div id="frame-nav-product" class="row mt-2">
 
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-6 col-sm-5 col-3">
             
             <a name="tambah" href="?page=produk&list=insert_produk" class="btn btn-primary noto-sans-font float-left" >+Tambah</a>
 
     </div>
 
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-6 col-sm-7 col-9">
     
         <form action="" method="post">
 
@@ -42,7 +42,7 @@ $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
     <?php else: ?>
         <div class="table-responsive">
             
-            <table class="table table-striped noto-sans-font mt-2">
+            <table class="table text-brown table-striped noto-sans-font mt-2">
             
                 <tr>
 

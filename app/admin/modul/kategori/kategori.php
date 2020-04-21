@@ -19,7 +19,7 @@
 		
 		<div class="row mt-2 mb-2">
 			
-			<div class="col-md-6">
+			<div class="col-md-6 col-3">
 				
 				<?php if(!file_exists($fileName)): ?>
 
@@ -29,7 +29,7 @@
 
 			</div>
 
-			<div class="col-md-6">
+			<div class="col-md-6 col-9">
 
 				<form action="" method="post">
 
