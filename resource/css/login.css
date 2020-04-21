@@ -1,6 +1,14 @@
 
 @media only screen and (max-width:768px){
 
+    img#image-wave-top {
+        width: 100%;
+    }
+    
+    section#frame-login {
+        width: 96%;
+    }
+
     .input-form {
         width: 350px;
         padding: 10px;
