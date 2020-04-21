@@ -1,9 +1,10 @@
 <?php 
 
-$query = getAll("SELECT * FROM tbuser WHERE status ='on'");
+$query = getAll("SELECT * FROM tbproduk WHERE status ='on'");
 
 // jika terdapat URL dengan data list maka ambil sebagai file_Name
 $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
+
 
 ?>
 
@@ -65,7 +66,7 @@ $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
                         <td class="text-center"><?= $key['produk_id'] ?></td>
                         <td class="text-center"><?= $key['nama_produk'] ?></td>
                         <td class="text-center"><?= $key['kategori_id'] ?></td>
-                        <td class="text-center"><img src="<?=BASE_URL?>/resource/img/<?=$key['gambar']?>" alt="<?=$key['nama_produk']?>.png"></td>
+                        <td class="text-center"><img src="modul/produk/view_images.php?id=<?=$key['produk_id']?>" alt="<?=$key['nama_produk']?>.png" style="width:100px"></td>
                         <td class="text-center"><?= $key['harga'] ?></td>
                         <td class="text-center"><?= $key['stok'] ?></td>
                         <td class="text-center"><?= $key['status'] ?></td>
