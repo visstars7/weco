@@ -19,6 +19,11 @@ function getAll($sql){
     return $data;
 }
 
+function rupiah ($data){
+    $rupiah = "Rp.".number_format($data)."-,";
+    return $rupiah;
+}
+
 function upload($file){
     $conn = conn();
     // filtering

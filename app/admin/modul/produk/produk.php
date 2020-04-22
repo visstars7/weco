@@ -1,15 +1,18 @@
 <?php 
 
-$query = getAll("SELECT * FROM tbproduk WHERE status ='on'");
+$query = getAll("SELECT * FROM tbproduk ORDER BY produk_id DESC");
 
 // jika terdapat URL dengan data list maka ambil sebagai file_Name
 $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
 
+$pesan = isset($_GET['pesan']) ? "<script>alert('barang sudah terhapus')</script>" : false ; 
+
+echo $pesan;
 
 ?>
 
 <div id="frame-nav-product" class="row mt-2">
-
+    <?php if(!file_exists($fileName)): ?>
     <div class="col-md-6 col-sm-5 col-3">
             
             <a name="tambah" href="?page=produk&list=insert_produk" class="btn btn-primary noto-sans-font float-left" >+Tambah</a>
@@ -30,7 +33,7 @@ $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
         </form>
 
     </div>
-
+    <?php endif; ?>
 
 </div>
 
@@ -50,7 +53,7 @@ $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
                     <th class="text-center">No</th>
                     <th class="text-center">Produk Id</th>
                     <th class="text-center">Nama Produk</th>
-                    <th  class="text-center">kategori</th>
+                    <th class="text-center">kategori</th>
                     <th class="text-center">Gambar Produk</th>
                     <th class="text-center">Harga</th>
                     <th class="text-center">stok</th>
@@ -67,10 +70,10 @@ $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
                         <td class="text-center"><?= $key['nama_produk'] ?></td>
                         <td class="text-center"><?= $key['kategori_id'] ?></td>
                         <td class="text-center"><img src="modul/produk/view_images.php?id=<?=$key['produk_id']?>" alt="<?=$key['nama_produk']?>.png" style="width:100px"></td>
-                        <td class="text-center"><?= $key['harga'] ?></td>
-                        <td class="text-center"><?= $key['stok'] ?></td>
+                        <td class="text-center"><?= rupiah($key['harga']) ?></td>
+                        <td class="text-center"><?= $key['stok'] ?>pcs</td>
                         <td class="text-center"><?= $key['status'] ?></td>
-                        <td class="text-center"><a class="btn btn-sm btn-info" href="?page=produk&list=update_produk">Edit</a> | <a class="btn btn-sm btn-danger" href="?page=produk&list=delete_produk">Delete</a></td>
+                        <td class="text-center"><a class="btn btn-sm btn-info" href="?page=produk&list=update_produk&id=<?=$key['produk_id']?>">Edit</a> | <a class="btn btn-sm btn-danger" onclick="return confirm('yakin menghapus produk?')" href="?page=produk&list=delete_produk&id=<?=$key['produk_id']?>">Delete</a></td>
 
                 </tr>
                 <?php $i++; ?>
