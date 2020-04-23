@@ -2,7 +2,7 @@
 
 $conn = conn();
 
-$kategori = getAll("SELECT kategori_id,nama_ktg FROM tbkategori ORDER BY kategori_id DESC");
+$kategori = getAll("SELECT kategori_id,nama_ktg FROM tbkategori WHERE `status`='on' ORDER BY kategori_id DESC");
 
 if(isset($_GET['id'])){
 
@@ -21,41 +21,46 @@ if(isset($_POST['submit'])){
     $deskripsi = htmlspecialchars($_POST['deskripsi']);
     $harga = intval($_POST['harga']);
     $stok = intval($_POST['stok']);
+    $berat = intval($_POST['berat']);
     $status = htmlspecialchars($_POST['radio']);
     $image = upload($_FILES['gambar']);
     $format_file = $_FILES['gambar']['type'];
 
     switch ($image) {
         case '1':
-            echo "<script>alert('Maaf extensi yang anda upload bukan gambar')</script>";
+            $_SESSION['error'] = "Extensi anda tidak cocok gunakan png / jpg";
+            header('Location:index.php?page=produk');
             break;
         case '2':
-            echo "<script>alert('Maaf ukuran gambar terlalu besar')</script>";
+            $_SESSION['error'] = "Ukuran File terlalu besar";
             break;
+            header('Location:index.php?page=produk');
         case '3':
-            echo "<script>alert('gagal mengaupload gambar')</script>";
+            $_SESSION['error'] = "Hubungi programmer";
+            header('Location:index.php?page=produk');
             break;
+        default:
+            // jika size kosong maka tidak update gambar
+            if($_FILES['gambar']['size'] == 0 ){
+        
+                $sql = " UPDATE tbproduk SET `nama_produk`='$produk', `kategori_id` = $kategori , `deskripsi` = '$deskripsi', `harga`  = $harga,`berat`=$berat , `stok` = $stok, `status` = '$status' WHERE produk_id = $produk_id ";
+        
+            }else{
+                $sql = " UPDATE tbproduk SET `nama_produk`='$produk', `kategori_id` = $kategori , `deskripsi` = '$deskripsi', `gambar` = '$image' , `tipe-file` = '$format_file' , `harga`  = $harga,`berat`=$berat ,`stok` = $stok, `status` = '$status' WHERE produk_id = $produk_id ";
+        
+            }
+        
+            mysqli_query($conn,$sql);
+        
+            if(mysqli_affected_rows($conn)){
+                echo "<script>alert('Sukses mengupdate produk')</script>";
+                header('Location:index.php?page=produk');
+            }else{
+                echo $sql;
+                Header('Location:index.php?page=produk');
+            }
     }
 
-    // jika size kosong maka tidak update gambar
-    if($_FILES['gambar']['size'] == 0 ){
-
-        $sql = " UPDATE tbproduk SET `nama_produk`='$produk', `kategori_id` = $kategori , `deskripsi` = '$deskripsi', `harga`  = $harga, `stok` = $stok, `status` = '$status' WHERE produk_id = $produk_id ";
-
-    }else{
-        $sql = " UPDATE tbproduk SET `nama_produk`='$produk', `kategori_id` = $kategori , `deskripsi` = '$deskripsi', `gambar` = '$image' , `tipe-file` = '$format_file' , `harga`  = $harga, `stok` = $stok, `status` = '$status' WHERE produk_id = $produk_id ";
-
-    }
-
-    mysqli_query($conn,$sql);
-
-    if(mysqli_affected_rows($conn)){
-        echo "<script>alert('Sukses mengupdate produk')</script>";
-        header('Location:index.php?page=produk');
-    }else{
-        echo $sql;
-        Header('Location:index.php?page=produk');
-    }
 
 }
 
@@ -105,6 +110,12 @@ if(isset($_POST['submit'])){
         <div class="content-form form-group">
             
             <img style="width:100px; border-radius:3px" src="modul/produk/view_images.php?id=<?=$key['produk_id']?>" alt="<?=$key['nama_produk']?>">
+
+        </div>
+
+        <div class="content-form form-group">
+
+            <input class="form-control w-50" type='number' name='berat' value="<?=$key['berat']?>">
 
         </div>
 

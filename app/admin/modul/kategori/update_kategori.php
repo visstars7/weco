@@ -32,22 +32,22 @@
 			<?php foreach ($query AS $key): ?>
 			<div class="form-group">
 				
-				<input type="text" name="kategori" class="form-control w-25" autocomplete="off" value="<?=$key['nama_ktg']?>">
+				<input type="text" name="kategori" class="form-control w-50 ml-3" autocomplete="off" value="<?=$key['nama_ktg']?>">
 
 			</div>
 
 			<div class="form-group">
 
-				<label class="noto-sans-font text-brown" >on</label>
+				<label class="noto-sans-font text-brown ml-3" >on</label>
 				<input type="radio" name="status" value="on" <?php if($key['status']=='on') echo "checked" ?> >
-				<label class="noto-sans-font text-brown">off</label> 
+				<label class="noto-sans-font text-brown ml-3">off</label> 
 				<input type="radio" name="status" value="off" <?php if($key['status']=='off') echo "checked" ?> >
 
 			</div>
 
 			<div class="form-group">
 				
-				<button class="btn btn-success" name="submit">Submit</button>
+				<button class="btn btn-success w-50 ml-3" name="submit">Submit</button>
 
 			</div>
 

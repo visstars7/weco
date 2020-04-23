@@ -1,11 +1,18 @@
 <?php 
 
-$query = getAll("SELECT * FROM tbproduk ORDER BY produk_id DESC");
+$query = getAll("SELECT * FROM produk ORDER BY produk_id DESC");
 
 // jika terdapat URL dengan data list maka ambil sebagai file_Name
 $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;
 
 $pesan = isset($_GET['pesan']) ? "<script>alert('barang sudah terhapus')</script>" : false ; 
+
+if(isset($_SESSION['error'])){
+
+    echo "<script>alert('".$_SESSION['error'].".')</script>";
+
+    unset($_SESSION['error']);
+} 
 
 echo $pesan;
 
@@ -53,11 +60,12 @@ echo $pesan;
                     <th class="text-center">No</th>
                     <th class="text-center">Produk Id</th>
                     <th class="text-center">Nama Produk</th>
-                    <th class="text-center">kategori</th>
+                    <th class="text-center">Kategori</th>
+                    <th class="text-center">Berat</th>
                     <th class="text-center">Gambar Produk</th>
                     <th class="text-center">Harga</th>
-                    <th class="text-center">stok</th>
-                    <th class="text-center">status</th>
+                    <th class="text-center">Stok</th>
+                    <th class="text-center">Status</th>
                     <th class="text-center">Aksi</th>
 
                 </tr>
@@ -68,7 +76,8 @@ echo $pesan;
                         <td class="text-center"><?= $i ?></td>
                         <td class="text-center"><?= $key['produk_id'] ?></td>
                         <td class="text-center"><?= $key['nama_produk'] ?></td>
-                        <td class="text-center"><?= $key['kategori_id'] ?></td>
+                        <td class="text-center"><?= $key['nama_ktg'] ?></td>
+                        <td class="text-center"><?= number_format($key['berat']) ?>gram</td>
                         <td class="text-center"><img src="modul/produk/view_images.php?id=<?=$key['produk_id']?>" alt="<?=$key['nama_produk']?>.png" style="width:100px"></td>
                         <td class="text-center"><?= rupiah($key['harga']) ?></td>
                         <td class="text-center"><?= $key['stok'] ?>pcs</td>

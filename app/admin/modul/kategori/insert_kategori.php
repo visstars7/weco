@@ -23,13 +23,13 @@ if(isset($_POST['insert'])){
 			
 			<div class="form-group">
 				
-				<input class="form-control w-25" type="text" name="name" placeholder="Nama Kategori">
+				<input class="form-control w-50 ml-3" type="text" name="name" placeholder="Nama Kategori">
 
 			</div>
 
 			<div class="form-group">
 				
-				<button name="insert" onclick="return confirm('Tekan oke untuk melanjutkan')" class=" btn btn-success form-control w-25" >Submit</button>
+				<button name="insert" onclick="return confirm('Tekan oke untuk melanjutkan')" class=" btn btn-success form-control w-50 ml-3" >Submit</button>
 
 			</div>
 

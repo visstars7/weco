@@ -28,29 +28,39 @@ function upload($file){
     $conn = conn();
     // filtering
 
-        #extention validation
-        $data = $file['type'];
+        if($file['size'] !== 0){
+            #extention validation
+            $data = $file['type'];
+    
+            if($data !== "image/jpeg" AND $data !== "image/png"){
+                return 1;
+            }
+            #size validation
+            elseif($file['size'] > 500000){
+                return 2;
+            }
+            #error info
+            elseif($file['error'] > 0){   
+                return 3;
+            }else{
+    
+                $image = addslashes(file_get_contents($file['tmp_name']));
+    
+                return $image;
+                
+            }
+    
+            // move To Images
+            // return file path
 
-        if($data !== "image/jpeg" AND $data !== "image/png"){
-            return 1;
         }
-        #size validation
-        elseif($file['size'] > 500000){
-            return 2;
-        }
-        #error info
-        elseif($file['error'] > 0){   
-            return 3;
-        }else{
-
+        else{
+    
             $image = addslashes(file_get_contents($file['tmp_name']));
 
             return $image;
             
         }
-
-    // move To Images
-    // return file path
 
 }
 

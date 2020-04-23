@@ -24,6 +24,7 @@ if($level['level'] !== "superadmin"){
     Header('Location:../index.php?page=home&pesan=1');
 }
 
+$pesanan = getAll("SELECT COUNT(proses_id) FROM tbonproses");
 
 $page = isset($_GET['page']) ? $_GET['page'] : false;
 
@@ -65,7 +66,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
         <div id="header-title">
 
             <?php if(isset($_GET['page'])): ?>
-
                 <h3 class="text-center noto-sans-font mt-4 text-brown">Halaman <?= $_GET['page']; ?></h3>
             <?php endif; ?>
 
@@ -85,7 +85,21 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=produk">Produk Menu</a></li>
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=user">User Menu</a></li>
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=kategori">Kategori</a></li>
-            <li class="list-sidebar"><a class="noto-sans" href="index.php?page=feedback">User Feedback</a></li>
+            <?php if($pesanan[0]["COUNT(proses_id)"]): ?>
+            <?php foreach($pesanan AS $row): ?>
+            <li class="list-sidebar">
+                <a class="noto-sans" href="index.php?page=pesanan">Pesanan</a>
+                <span class="label-pesanan">+<?php $row ?></span>
+            </li>
+            <?php endforeach; ?>
+            <?php else: ?>
+            <li class="list-sidebar">
+                <a class="noto-sans" href="index.php?page=pesanan">Pesanan</a>
+                <span class="label-pesanan"><?php $row ?></span>
+            </li>
+            <?php endif; ?>
+            <li class="list-sidebar"><a class="noto-sans" href="index.php?page=pesanan_detail">Pesanan Detail</a></li>
+            <li class="list-sidebar"><a class="noto-sans" href="index.php?page=wilayah">Wilayah</a></li>
         
         </ul>
 

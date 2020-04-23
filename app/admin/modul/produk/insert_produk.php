@@ -2,7 +2,7 @@
 
 $conn = conn();
 
-$kategori = getAll("SELECT kategori_id,nama_ktg FROM tbkategori ORDER BY kategori_id DESC");
+$kategori = getAll("SELECT kategori_id,nama_ktg FROM tbkategori WHERE `status` = 'on' ORDER BY kategori_id DESC");
 
 if(isset($_POST['submit'])){
 
@@ -10,35 +10,43 @@ if(isset($_POST['submit'])){
     $kategori = intval($_POST['kategori_id']);
     $deskripsi = $_POST['deskripsi'];
     $harga = intval($_POST['harga']);
+    $berat = intval($_POST['berat']);
     $stok = intval($_POST['stok']);
     $format_file = $_FILES['gambar']['type'];
     $image = upload($_FILES['gambar']);
 
     switch ($image) {
         case '1':
-            echo "<script>alert('Maaf extensi yang anda upload bukan gambar')</script>";
+            $_SESSION['error'] = "Extensi anda tidak cocok gunakan png / jpg";
+            header('Location:index.php?page=produk');
             break;
         case '2':
-            echo "<script>alert('Maaf ukuran gambar terlalu besar')</script>";
+            $_SESSION['error'] = "Ukuran File terlalu besar";
             break;
+            header('Location:index.php?page=produk');
         case '3':
-            echo "<script>alert('gagal mengaupload gambar')</script>";
+            $_SESSION['error'] = "Hubungi programmer";
+            header('Location:index.php?page=produk');
             break;
+
+        default:
+
+            $sql = "INSERT INTO tbproduk (`produk_id`,`nama_produk`,`kategori_id`,`deskripsi`,`gambar`,`tipe-file`,`harga`,`berat`,`stok`,`status`)
+                                    VALUES (NULL,'$produk',$kategori,'$deskripsi','$image','$format_file',$harga,$berat,$stok,'on')
+            ";
+        
+            mysqli_query($conn,$sql);
+        
+            if(mysqli_affected_rows($conn)){
+                echo "<script>alert('Sukses mengupload produk')</script>";
+                header('Location:index.php?page=produk');
+            }else{
+                echo $sql;
+                echo "<script>alert('Maaf,tidak bisa insert produk')</script>";
+            }
+        break;
     }
 
-    $sql = "INSERT INTO tbproduk (`produk_id`,`nama_produk`,`kategori_id`,`deskripsi`,`gambar`,`tipe-file`,`harga`,`stok`,`status`)
-                            VALUES (NULL,'$produk',$kategori,'$deskripsi','$image','$format_file',$harga,$stok,'on')
-    ";
-
-    mysqli_query($conn,$sql);
-
-    if(mysqli_affected_rows($conn)){
-        echo "<script>alert('Sukses mengupload produk')</script>";
-        header('Location:index.php?page=produk');
-    }else{
-        echo $sql;
-        echo "<script>alert('Maaf,tidak bisa insert produk')</script>";
-    }
 
 }
 
@@ -85,6 +93,12 @@ if(isset($_POST['submit'])){
         <div class="content-form form-group">
 
             <input class="form-control w-50" type='number' name='harga' placeholder='Harga'>
+
+        </div>
+
+        <div class="content-form form-group">
+
+            <input class="form-control w-50" type='number' name='berat' placeholder='Berat barang /gram'>
 
         </div>
 
