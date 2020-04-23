@@ -1,6 +1,114 @@
 
 @media only screen and (min-width:300px){
 
+    .card-menu a img{
+        width: 200px;
+    }
+
+    #sidebar-desktop{
+        display: none;
+    }
+
+    .frame-content-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    p#label-kategori {
+        font-size: 20px;
+    }
+    
+    p#label-harga {
+        font-size: 20px;
+    }
+
+    #label-product{
+        font-size: 30px;
+    }
+
+    .card-menu{
+        margin-top: 16px;
+        padding: 10px;
+    }
+
+    .card-menu p {
+        margin: 0;
+        color: #b85a3c;
+        font-family: abel;
+    }
+    
+    .card-menu .underline {
+        padding: 3px;
+        margin: 0;
+        width: 100px;
+        border-color: #6c63ff;
+        }
+
+    @font-face{
+        font-family: 'abel';
+        src:url('../font/abel/abel-regular.ttf');
+    }
+
+    .dropdown{
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        background-color: #6C63FF ;
+        width: 91px;
+        text-align: center;
+        box-shadow: 5,5px,0,0,rgba(51, 51, 51, 0.589);
+        z-index:1;
+    }
+    .btn-dropdown{
+        font-family: ubuntu;
+        border-radius: 0px;
+        background-color: #B85A3C;
+        color: white;
+    }
+    .btn-dropdown:hover{
+        color: white;
+    }
+    .show{display: block;}
+
+    .hidden{display: block;}
+
+    .dropdown-content a{
+        text-decoration: none;
+        color: white;
+        font-family: ubuntu;
+        font-weight: bold;
+        padding: 5px;
+        display:block;
+    }
+
+    h3.text-center.blue-color {
+        font-family: ubuntu;
+        margin: 10px;
+    }
+    
+    .underline {
+        border-bottom: 3px solid #b85a3ccf;
+        width: 65%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .blue-color{
+        color:#6C63FF;
+    }
+
+    #header-frame-content span {
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+
     .nav-item {
         width: 138px;
         padding: 10px;
@@ -140,6 +248,9 @@
         width: 100%;
     }
 
+    .abel-font{
+        font-family: 'abel';
+    }
 
     @font-face{
         font-family:'ubuntu';
@@ -155,6 +266,29 @@
 
 @media only screen and (min-width:576px){
 
+    .card-menu a img{
+        width: 150px;
+    }
+
+    .frame-content {
+        display: flex;
+    }
+
+    .frame-content-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #sidebar-desktop{
+        display: block;
+    }
+
+    .abel-font{
+        font-family: 'abel';
+    }
+
     .nav-item{
         margin: 0;
         padding: 0;
@@ -165,17 +299,114 @@
         text-align: justify;
     }
 
+    .card-menu{
+        margin-top: 5px;
+    }
+    .card-menu p {
+        margin: 0;
+        color: #b85a3c;
+        font-size: 20px;
+        font-family: abel;
+    }
+    
+    .card-menu .underline {
+        padding: 3px;margin: 0;width: 15%;border-color: #6c63ff;
+        }
+    
+    @font-face{
+        font-family: 'abel';
+        src:url('../font/abel/abel-regular.ttf');
+    }
+
+    .abel-font{
+        font-family: 'abel';
+    }
+    
+
 }
 
 @media only screen and (min-width:768px){
 
+    .frame-content {
+        display: flex;
+    }
+
+    .hidden{display:none}
     .nav-item{
         margin: 12px;
     }
+    .card-menu p {
+        margin: 0;
+        color: #b85a3c;
+        font-size: 20px;
+        font-family: abel;
+    }
     
+    .card-menu .underline {
+        padding: 3px;margin: 0;width: 15%;border-color: #6c63ff;
+        }
+    @font-face{
+        font-family: 'abel';
+        src:url('../font/abel/abel-regular.ttf');
+    }
 }
 
 @media only screen and (min-width:1024px){
+
+    .frame-content {
+        display: flex;
+    }
+
+    .frame-content-menu{
+        display: flex;
+        flex-direction: row;
+        width: 115%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    #sidebar-desktop ul li a {
+        color: #b85a3c;
+        margin: 0;
+        font-family: abel;
+        font-size: 20px;
+    }
+    
+
+    #sidebar-desktop{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @font-face{
+        font-family: 'abel';
+        src:url('../font/abel/abel-regular.ttf');
+    }
+
+    .card-menu{
+        padding: 27px;
+    }
+
+    .card-menu p {
+        margin: 0;
+        color: #b85a3c;
+        font-size: 20px;
+        font-family: abel;
+    }
+    
+    .card-menu .underline {
+        padding: 3px;margin: 0;width: 115px;border-color: #6c63ff;
+        }
+
+    .hidden{display:none}
+
+    .underline {
+        border-bottom: 3px solid #b85a3ccf;
+        width: 45%;
+        text-align: center;
+        margin: auto;
+    }
 
     div#logo-header {
         text-align: left;

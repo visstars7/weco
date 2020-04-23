@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
     $query = mysqli_query($conn,$sql);
 
     $row = mysqli_fetch_assoc($query);
-    header("Content-type:".$row['tipe-file']);
+    header("Content-type:".$row['tipe_file']);
     echo $row['gambar'];
 
 }else{

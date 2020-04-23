@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
                 $sql = " UPDATE tbproduk SET `nama_produk`='$produk', `kategori_id` = $kategori , `deskripsi` = '$deskripsi', `harga`  = $harga,`berat`=$berat , `stok` = $stok, `status` = '$status' WHERE produk_id = $produk_id ";
         
             }else{
-                $sql = " UPDATE tbproduk SET `nama_produk`='$produk', `kategori_id` = $kategori , `deskripsi` = '$deskripsi', `gambar` = '$image' , `tipe-file` = '$format_file' , `harga`  = $harga,`berat`=$berat ,`stok` = $stok, `status` = '$status' WHERE produk_id = $produk_id ";
+                $sql = " UPDATE tbproduk SET `nama_produk`='$produk', `kategori_id` = $kategori , `deskripsi` = '$deskripsi', `gambar` = '$image' , `tipe_file` = '$format_file' , `harga`  = $harga,`berat`=$berat ,`stok` = $stok, `status` = '$status' WHERE produk_id = $produk_id ";
         
             }
         

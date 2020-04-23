@@ -1,6 +1,6 @@
 <?php 
 
-$query = getAll("SELECT * FROM produk ORDER BY produk_id DESC");
+$query = getAll("SELECT tbproduk.*,tbkategori.* FROM tbproduk INNER JOIN tbkategori ON tbproduk.kategori_id = tbkategori.kategori_id ORDER BY produk_id DESC");
 
 // jika terdapat URL dengan data list maka ambil sebagai file_Name
 $fileName = isset($_GET['list']) ? "modul/produk/".$_GET['list'].".php" : false;

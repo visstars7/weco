@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
 
         default:
 
-            $sql = "INSERT INTO tbproduk (`produk_id`,`nama_produk`,`kategori_id`,`deskripsi`,`gambar`,`tipe-file`,`harga`,`berat`,`stok`,`status`)
+            $sql = "INSERT INTO tbproduk (`produk_id`,`nama_produk`,`kategori_id`,`deskripsi`,`gambar`,`tipe_file`,`harga`,`berat`,`stok`,`status`)
                                     VALUES (NULL,'$produk',$kategori,'$deskripsi','$image','$format_file',$harga,$berat,$stok,'on')
             ";
         
