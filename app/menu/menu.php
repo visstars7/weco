@@ -3,13 +3,40 @@
 
 include_once 'helper/helper.php';
 
-$query = getAll("SELECT tbproduk.*,tbkategori.* FROM tbproduk INNER JOIN tbkategori ON tbproduk.kategori_id = tbkategori.kategori_id");
-$kategori = getAll("SELECT * FROM tbkategori");
+// PDO
+
+$PDO = PDO();
+$sql = "SELECT tbproduk.*,tbkategori.* FROM tbproduk INNER JOIN tbkategori ON tbproduk.kategori_id = tbkategori.kategori_id";
+$pdoStatementProduk = $PDO->prepare($sql);
+$pdoStatementProduk->execute();
+$query = $pdoStatementProduk->fetchAll(PDO::FETCH_ASSOC);
+
+$pdoStatementKtg = $PDO->prepare("SELECT * FROM tbkategori");
+$pdoStatementKtg->execute();
+$kategori = $pdoStatementKtg->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $query = getAll("SELECT tbproduk.*,tbkategori.* FROM tbproduk INNER JOIN tbkategori ON tbproduk.kategori_id = tbkategori.kategori_id WHERE tbproduk.kategori_id = $id");
+
+    $sql = "SELECT tbproduk.*,tbkategori.* FROM tbproduk INNER JOIN tbkategori ON tbproduk.kategori_id = tbkategori.kategori_id WHERE tbproduk.kategori_id = :kategori_id";
+    $pdoStatementProduk = $PDO->prepare($sql);
+    $pdoStatementProduk->bindParam(':kategori_id',intval($_GET['id']));
+    // $query_execute[':kategori_id'] = intval($_GET['id']);
+    $pdoStatementProduk->execute();
+    $query = $pdoStatementProduk->fetchAll(PDO::FETCH_ASSOC);
+
+    var_dump($pdoStatementProduk->execute());
+
 }
+
+
+// mysqli
+// $query = getAll("SELECT tbproduk.*,tbkategori.* FROM tbproduk INNER JOIN tbkategori ON tbproduk.kategori_id = tbkategori.kategori_id");
+// $kategori = getAll("SELECT * FROM tbkategori");
+
+// if(isset($_GET['id'])){
+//     $id = $_GET['id'];
+//     $query = getAll("SELECT tbproduk.*,tbkategori.* FROM tbproduk INNER JOIN tbkategori ON tbproduk.kategori_id = tbkategori.kategori_id WHERE tbproduk.kategori_id = $id");
+// }
 
 ?>
 
@@ -66,7 +93,7 @@ if(isset($_GET['id'])){
                 <?php foreach($query AS $key): ?>
                 <div class="card-menu">
 
-                    <a href="index.php?page=menu&page_detail=<?=$key['produk_id']?>">
+                    <a href="index.php?page=menu_detail=<?=$key['produk_id']?>">
 
                         <img src="menu/view-image.php?id=<?=$key['produk_id']?>" alt="<?=$key['nama_produk']?>">
 

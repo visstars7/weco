@@ -66,13 +66,13 @@ switch ($pesan) {
                 
                 <div class="element-form">
 
-                    <input class="input-form" type='text' name='nama_depan' id='nama_depan' placeholder='Masukan nama depan disini' value="<?=$nama_dpn?>" required>
+                    <input class="input-form" type='text' name='nama_depan' id='nama_depan' placeholder='Masukan nama depan disini' value="<?=$nama_dpn?>" maxlength="8" required>
 
                 </div>
 
                 <div class="element-form">
 
-                    <input class="input-form" type='text' name='nama_belakang' id='nama_belakang' placeholder='Masukan nama belakang disini' value="<?=$nama_blg?>" required>
+                    <input class="input-form" type='text' name='nama_belakang' id='nama_belakang' placeholder='Masukan nama belakang disini' value="<?=$nama_blg?>" maxlength="8" required>
 
                 </div>
 
@@ -84,7 +84,7 @@ switch ($pesan) {
                 
                 <div class="element-form">
 
-                    <input class="input-form" type='email' name='email' id='email' placeholder='Masukan nama email disini' value="<?=$email?>" required>
+                    <input class="input-form" type='email' name='email' id='email' placeholder='Masukan nama email disini' value="<?=$email?>" maxlength="20" size="5" required>
 
                 </div>
 
@@ -96,13 +96,13 @@ switch ($pesan) {
 
                 <div class="element-form">
 
-                    <input class="input-form" type='password' name='password' id='password' placeholder='Masukan password disini' required>
+                    <input class="input-form" type='password' name='password' id='password' placeholder='Masukan password disini' maxlength="8" required>
 
                 </div>
 
                 <div class="element-form">
 
-                    <input class="input-form" type='password' name='password2' id='password2' placeholder='Masukan kembali password disini' required>
+                    <input class="input-form" type='password' name='password2' id='password2' placeholder='Masukan kembali password disini' maxlength="8" required>
 
                 </div>
 
