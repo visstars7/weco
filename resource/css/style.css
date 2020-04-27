@@ -1,6 +1,50 @@
 
 @media only screen and (min-width:300px){
 
+    div#frame-content {
+        width: 100%;
+        margin: 0;
+        padding:0;
+    }
+
+    .btn-keranjang {
+        text-align: right;
+    }
+    
+    p.kategori-produk {
+        text-align: left;
+        font-size: 30px;
+    }
+    
+    p.harga-product {
+        text-align: right;
+        font-size: 30px;
+    }
+
+    img.gambar-content {
+        width: 100%;
+    }
+    
+    p.nama-produk {
+        text-align: left;
+        font-size: 30px;
+    }
+    
+    a.btn.btn-primary.btn-sm {
+        text-align: right;
+    }
+
+    div#frame-card-product {
+        display: flex;
+        text-align: center;
+    }
+    
+    .card-product {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
     .card-menu a img{
         width: 200px;
     }
@@ -352,6 +396,55 @@
 }
 
 @media only screen and (min-width:1024px){
+
+    .text-brown{
+        color: #B85A3C!important;
+    }
+
+    div#frame-content {
+        width: 50%;
+        margin: 0 15%;
+        padding: 10px;
+    }
+
+    .btn-keranjang {
+        text-align: right;
+    }
+    
+    p.kategori-produk {
+        text-align: left;
+        font-size: 30px;
+    }
+    
+    p.harga-product {
+        text-align: right;
+        font-size: 30px;
+    }
+
+    img.gambar-content {
+        width: 100%;
+    }
+    
+    p.nama-produk {
+        text-align: left;
+        font-size: 30px;
+    }
+    
+    a.btn.btn-primary.btn-sm {
+        text-align: right;
+    }
+
+    div#frame-card-product {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .card-product {
+        justify-content: center;
+        text-align: center;
+        width: 50%;
+    }
 
     .frame-content {
         display: flex;

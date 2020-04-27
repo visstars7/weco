@@ -24,7 +24,7 @@ if(isset($_GET['id'])){
     $pdoStatementProduk->execute();
     $query = $pdoStatementProduk->fetchAll(PDO::FETCH_ASSOC);
 
-    var_dump($pdoStatementProduk->execute());
+    // var_dump($pdoStatementProduk->execute());
 
 }
 
@@ -93,7 +93,7 @@ if(isset($_GET['id'])){
                 <?php foreach($query AS $key): ?>
                 <div class="card-menu">
 
-                    <a href="index.php?page=menu_detail=<?=$key['produk_id']?>">
+                    <a href="index.php?page=menu_detail&id=<?=$key['produk_id']?>">
 
                         <img src="menu/view-image.php?id=<?=$key['produk_id']?>" alt="<?=$key['nama_produk']?>">
 
