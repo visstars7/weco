@@ -20,6 +20,10 @@ session_start();
 
     <link rel="shortcut icon" href="../resource/img/Weco.png" type="image/x-icon">
 
+    <!-- <script src="../resource/jquery-3.4.1.min.js" ></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -52,9 +56,6 @@ session_start();
 
 <?php include_once 'footer.php' ?>
 
-
-
-<script src="../resource/jquery-3.4.1.min.js" ></script>
 <script src="../resource/popper/popper.min.js" ></script>
 <script src="../resource/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
 </body>

@@ -63,7 +63,7 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
 
             <div id="keranjang">
 
-                <a class=" <?=$keranjang_active?> ubuntu-font" href="#">Keranjang</a>
+                <a class=" <?=$keranjang_active?> ubuntu-font" href="index.php?page=keranjang">Keranjang</a>
 
             </div>
 

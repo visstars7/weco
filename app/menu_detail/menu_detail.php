@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 include_once 'helper/helper.php';
 
 if(isset($_GET['id'])){
@@ -28,11 +30,15 @@ if(isset($_GET['id'])){
             <div class="col-md-6 col-xs-6 col-6">
                 <p class="nama-produk abel-font text-brown"><?=$row['nama_produk'];?></p>
             </div>
-
+            <?php if(!isset($_SESSION['user'])): ?>
             <div class="col-md-6 col-xs-6 col-6 btn-keranjang">
-                <a class="btn btn-primary btn-md" href="#">+tambah keranjang</a>
+                <a class="btn btn-primary btn-md" href="#">+Login dahulu</a>
             </div>
-
+            <?php else: ?>
+            <div class="col-md-6 col-xs-6 col-6 btn-keranjang">
+            <a class="btn btn-primary btn-md" href="keranjang/insertKeranjang.php?id=<?=$row['produk_id']?>">+tambah keranjang</a>
+            </div>
+            <?php endif; ?>
         </div>
 
         <div class="row">
