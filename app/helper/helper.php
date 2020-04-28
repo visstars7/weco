@@ -5,9 +5,11 @@ function baseURL(){
 }
 
 function conn(){
-    $conn = mysqli_connect('localhost','root','','weco');
+    $conn = mysqli_connect('localhost','root','','WECO');
     return $conn;
 }
+
+// conn();
 
 
 function getAll($sql){
@@ -71,7 +73,7 @@ function upload($file){
 function PDO() {
 
     $server = 'localhost';
-    $dbname = 'weco';
+    $dbname = 'WECO';
     $user = 'root';
     $password = '';
     $koneksiPDO = new PDO("mysql:host=$server;dbname=$dbname",$user,$password);

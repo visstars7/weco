@@ -4,6 +4,11 @@ if(!isset($_SESSION['keranjang'])){
     header("Location:index.php?page=home");
 }
 
+if(empty($_SESSION['keranjang'])){
+    unset($_SESSION['keranjang']);
+    header("Location:index.php?page=menu");
+}
+
 include 'helper/helper.php';
 
 $no = 1;
@@ -47,7 +52,7 @@ $no = 1;
                     <td><?= $row['stok'] ?></td>
                     <td><?= rupiah($row['qty']*$row['harga']); ?></td>
                     <td class="text-center">
-                        <a class="btn btn-success" href="#">beli</a> |
+                        <a class="btn btn-success" href="index.php?page=order&id=<?=$row['produk_id']?>">beli</a> |
                         <a class="btn btn-danger" href="keranjang/deleteKeranjang.php?id=<?=$row['produk_id']?>">hapus</a>
                     </td>
 
@@ -61,8 +66,8 @@ $no = 1;
 
     <div class="table-footer">
         
-        <a class="btn btn-success" href="#">Beli Semua</a>
-        <a class="btn btn-danger"  href="keranjang/deleteKeranjang.php?id=<?=$row['produk_id']?>&status=semua">Hapus Semua</a>
+        <a class="btn btn-success" href="index.php?page=order">Beli Semua</a>
+        <a class="btn btn-danger"  href="keranjang/deleteKeranjang.php?status=semua">Hapus Semua</a>
 
     </div>
 
@@ -83,9 +88,9 @@ $no = 1;
                 url:"keranjang/updateKeranjang.php",
                 success:function(result){
                     // console.log(result);
-                    var parseData = JSON.parse(result);
                     window.location.reload();
-                    // return alert(parseData.pesan);
+                    var parseData = JSON.parse(result);
+                    return alert(parseData.pesan);
                 }
             });
     

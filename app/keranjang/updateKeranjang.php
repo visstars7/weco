@@ -45,7 +45,7 @@ session_start();
         
                 // echo json_encode("pesan"=>["berhasil"]);
         
-                echo json_encode(["pesan"=>"berhasil"]);
+                // echo json_encode(["sukses"=>"berhasil"]);
             }
             
             

@@ -8,6 +8,7 @@ $login_active = $page == "login" ? "active" : "";
 $myprofile = $page == "myprofile" ? "active" : "";
 $kontak_active = $page == "kontak_active" ? "active" : "";
 
+// session_start();
 
 $header_md = isset($_SESSION['user']) ? "6" :"7";
 
@@ -59,13 +60,18 @@ $header_md = isset($_SESSION['user']) ? "6" :"7";
             
         </div>
 
-        <div class="col-md-1 top col-sm-1 nav-item ">
-
+        <div class="col-md-1 top col-sm-1 nav-item">
+            <?php if(isset($_SESSION['keranjang'])): ?>
             <div id="keranjang">
+                <a class=" <?=$keranjang_active?> ubuntu-font" href="index.php?page=keranjang">Keranjang<span style="font-size:15px"> +<?= count($_SESSION['keranjang']); ?></span></a>
 
+            </div>
+            <?php else: ?>
+            <div id="keranjang">
                 <a class=" <?=$keranjang_active?> ubuntu-font" href="index.php?page=keranjang">Keranjang</a>
 
             </div>
+            <?php endif; ?>
 
         </div>
 
