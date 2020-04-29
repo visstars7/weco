@@ -1,6 +1,33 @@
 
 @media only screen and (min-width:300px){
 
+    .stranger-frame {
+        background-color: #f2f2f2;
+    }
+
+    .stranger-frame form ul li label {
+        color: #b85a3c;
+        margin: 5px 0;
+        font-weight: bold;
+    }
+
+    .form-group{
+        padding: 10px;
+    }
+
+    ul li {
+        list-style-type:none;
+    }
+    
+    ul li a {
+        color: #b85a3c;
+        text-decoration:none!important;
+        transition:0.3s;
+    }
+    ul li a:hover {
+        color: none;
+    }
+
     div#frame-content {
         width: 100%;
         margin: 0;
@@ -310,6 +337,10 @@
 
 @media only screen and (min-width:576px){
 
+    .stranger-frame {
+        background-color: #f2f2f2;
+    }
+
     .card-menu a img{
         width: 150px;
     }
@@ -371,6 +402,33 @@
 
 @media only screen and (min-width:768px){
 
+    .stranger-frame {
+        background-color: #f2f2f2;
+    }
+
+    .form-group{
+        padding: 40px;
+    }
+
+    .stranger-frame form ul li label {
+        color: #b85a3c;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+
+    ul li {
+        list-style-type:none;
+    }
+    
+    ul li a {
+        color: #b85a3c;
+        text-decoration:none!important;
+        transition:0.3s;
+    }
+    ul li a:hover {
+        color: #6c63ff;
+    }
+
     .frame-content {
         display: flex;
     }
@@ -396,6 +454,38 @@
 }
 
 @media only screen and (min-width:1024px){
+
+    .form-group{
+        padding: 40px;
+    }
+
+    .stranger-frame form ul li label {
+        font-weight: bold;
+        color: #b85a3c;
+        margin: 5px 0;
+    }
+
+    .title-header-product {
+        padding: 0px;
+        border-bottom: 2px solid #6c63ff;
+    }
+    
+    .title-header-product h3 {
+        color: #b85a3c;
+    }
+
+    ul li {
+        list-style-type:none;
+    }
+    
+    ul li a {
+        color: #b85a3c;
+        text-decoration:none!important;
+        transition:0.3s;
+    }
+    ul li a:hover {
+        color: #6c63ff!important;
+    }
 
     .text-brown{
         color: #B85A3C!important;
@@ -633,7 +723,7 @@
 
     h3.ubuntu-font.text-center {
         color: #B85A3C;
-        padding-bottom: 15px;
+        padding: 0px;
     }
 
     #page-3 {
