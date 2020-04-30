@@ -1,0 +1,58 @@
+.kiri{
+    text-align: right;
+    padding: 38px 0;
+    justify-content: right;
+}
+.col-md-6.col-6.kiri p {
+    margin: 0;
+}
+.underlined{
+    border-bottom: 2px solid #6c63ff;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.kanan{
+    margin: 5px 0;
+    padding: 10px 0;
+}
+
+.kanan p{
+    margin: 0;
+}
+
+#kanan p span {
+    font-size: 25px;
+    color: #6c63ff;
+}
+
+.kiri p span{
+    font-size: 25px;
+    color: #6c63ff;
+}
+
+.kanan p span {
+    font-size: 35px;
+    color: #6c63ff;
+}
+
+#kanan{
+    padding: 41px 0;
+}
+
+#kanan p{
+    margin:0;
+    text-align: right;
+}
+
+button.mt-2.ml-2.btn.btn-info {
+    margin: 16px;
+}
+
+.pembayaran p {
+    margin: 0;
+}
+
+.pembayaran {
+    padding: 24px 0px;
+}

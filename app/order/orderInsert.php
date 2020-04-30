@@ -36,7 +36,7 @@ if(!isset($_SESSION['user']) || !isset($_SESSION['keranjang'])){
             echo $harga;
             $jam =  date("h");
             $jam +=1;
-            $jamTanggal = date("Y-m-d")." ".$jam.date(":i:s");
+            $jamTanggal = date("Y-m-d");
             $userID = intval($_SESSION['user']);
             
             if(isset($_POST['id'])){

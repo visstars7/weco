@@ -9,6 +9,11 @@ if(empty($_SESSION['keranjang'])){
     header("Location:index.php?page=menu");
 }
 
+if($_SESSION['invoice'] == true){
+    $_SESSION['pembayaran'] = "Selesaikan Pembayaran dahulu";
+    header('Location:index.php?page=home');
+}
+
 include 'helper/helper.php';
 
 $no = 1;
@@ -48,7 +53,7 @@ $no = 1;
                     <td><img style="width:100px" src="keranjang/image.php?id=<?=$row['produk_id']?>" alt="<?=$row['nama_produk']?>"></td>
                     <td><input style="width:50px" name="<?=$row['produk_id']?>" class="text-center qty" type="number" value="<?= $row['qty'] ?>"></td>
                     <td><?= rupiah($row['harga']) ?></td>
-                    <td><?= $row['berat'] ?></td>
+                    <td><?= $row['berat']*$row['qty']; ?></td>
                     <td><?= $row['stok'] ?></td>
                     <td><?= rupiah($row['qty']*$row['harga']); ?></td>
                     <td class="text-center">

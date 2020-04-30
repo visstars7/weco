@@ -4,6 +4,12 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 
 session_start();
 
+if(isset($_SESSION['pembayaran'])){
+    $msg = $_SESSION['pembayaran'];
+    echo "<script>alert('$msg')</script>";
+    unset($_SESSION['pembayaran']);
+}
+
 ?>
 
 <!DOCTYPE html>
