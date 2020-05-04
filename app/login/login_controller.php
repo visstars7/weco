@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
     
         // jika di dalam database terdapat email dan password yang di ketikan user maka benar
     
-        $query = mysqli_query($connected,"SELECT email,password,user_id,nama_depan FROM tbuser WHERE email = '$email' && password = '$password'");
+        $query = mysqli_query($connected,"SELECT email,password,user_id,nama_depan FROM tbuser WHERE email = '$email' && password = '$password'&&status='on'");
         
         // var_dump($query);
         

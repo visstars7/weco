@@ -1,13 +1,12 @@
 <?php 
 
 $page = isset($_GET['page']) ? $_GET['page'] : false;
-
 session_start();
 
-if(isset($_SESSION['pembayaran'])){
-    $msg = $_SESSION['pembayaran'];
+if(isset($_SESSION['invoice'])){
+    $msg = $_SESSION['invoice'];
     echo "<script>alert('$msg')</script>";
-    unset($_SESSION['pembayaran']);
+    unset($_SESSION['invoice']);
 }
 
 ?>

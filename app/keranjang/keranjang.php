@@ -9,12 +9,20 @@ if(empty($_SESSION['keranjang'])){
     header("Location:index.php?page=menu");
 }
 
-if($_SESSION['invoice'] == true){
-    $_SESSION['pembayaran'] = "Selesaikan Pembayaran dahulu";
-    header('Location:index.php?page=home');
-}
-
 include 'helper/helper.php';
+
+$user_ID = $_SESSION['user'];
+$pdo = PDO();
+$pdoStatementInv = $pdo->prepare("SELECT proses_id FROM tbonproses WHERE user_id = :user_id && status = '0'");
+$pdoStatementInv->bindParam(':user_id',$user_ID);
+$pdoStatementInv->execute();
+$result = $pdoStatementInv->fetchAll(PDO::FETCH_ASSOC);
+foreach($result AS $row){
+    if(!empty($row)){
+        $_SESSION['invoice'] = "Maaf bayar dahulu pesanan sebelumnya";
+        header('Location:index.php?page=home');
+    }
+}
 
 $no = 1;
 

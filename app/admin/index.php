@@ -85,20 +85,20 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=produk">Produk Menu</a></li>
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=user">User Menu</a></li>
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=kategori">Kategori</a></li>
-            <?php if($pesanan[0]["COUNT(proses_id)"]): ?>
-            <?php foreach($pesanan AS $row): ?>
+            <?php if(intval($pesanan[0]["COUNT(proses_id)"]) !== 0): ?>
+            <?php foreach($pesanan AS $row => $value): ?>
             <li class="list-sidebar">
                 <a class="noto-sans" href="index.php?page=pesanan">Pesanan</a>
-                <span class="label-pesanan">+<?php $row ?></span>
+                <span class="label-pesanan">+<?=$value['COUNT(proses_id)']; ?></span>
             </li>
             <?php endforeach; ?>
             <?php else: ?>
             <li class="list-sidebar">
                 <a class="noto-sans" href="index.php?page=pesanan">Pesanan</a>
-                <span class="label-pesanan"><?php $row ?></span>
+                <span class="label-pesanan"></span>
             </li>
             <?php endif; ?>
-            <li class="list-sidebar"><a class="noto-sans" href="index.php?page=pesanan_detail">Pesanan Detail</a></li>
+            <li class="list-sidebar"><a class="noto-sans" href="index.php?page=pesananDetail">Pesanan Detail</a></li>
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=wilayah">Wilayah</a></li>
         
         </ul>

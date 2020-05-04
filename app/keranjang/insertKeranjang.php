@@ -33,9 +33,9 @@ if(isset($_GET['id'])){
 
     // array dimaksukkan kedalam session keranjang
     $_SESSION['keranjang'] = $keranjang;
-    header('Location:../index.php?page=home');
+    header('Location:../index.php?page=menu');
 }else{
-    header('Location:../index.php?page=home');
+    header('Location:../index.php?page=menu');
 }
 
 ?>

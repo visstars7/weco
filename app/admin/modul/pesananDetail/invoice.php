@@ -1,43 +1,38 @@
 <?php 
 
-include_once "../helper/helper.php";
+include_once "../../../helper/helper.php";
 session_start();
-$pdo = PDO();
 
-if(!isset($_SESSION['user'])){
-    header("Location:../index.php?page=home");
+if(isset($_POST['email'])){
+
+    $pdo = PDO();
+    
+    $email = $_POST['email'];
+    
+    // $order_id =  intval($pdo->lastInsertId());
+    // echo $order_id;
+    
+    $pdoStatementViewOrder = $pdo->prepare("SELECT * FROM orderDetail WHERE email = :email");
+    $pdoStatementViewOrder->bindParam(":email",$email);
+    $pdoStatementViewOrder->execute();
+    $order = $pdoStatementViewOrder->fetchAll(PDO::FETCH_ASSOC);
+    
+    $pdoStatementViewBank = $pdo->prepare("SELECT * FROM tbbank WHERE status ='on'");
+    $pdoStatementViewBank->execute();
+    $Bank = $pdoStatementViewBank->fetchAll(PDO::FETCH_ASSOC);
+    
+    $hari_terakhir = date('d')+1;
+    
+    $totalBelanja = 0;
+    $totalBerat = 0;
+    
+    
+    // $user_ID = $_SESSION['user'];
+    // $_SESSION['invoice'] = true;
+    
+    $no = 1;
 }
 
-$userID = intval($_SESSION['user']);
-$pdoStatementViewUser = $pdo->prepare("SELECT email FROM tbuser WHERE user_id = :userID");
-$pdoStatementViewUser->bindParam(":userID",$userID);
-$pdoStatementViewUser->execute();
-$fetch = $pdoStatementViewUser->fetchAll(PDO::FETCH_ASSOC);
-
-$email = $fetch[0]['email'];
-
-// $order_id =  intval($pdo->lastInsertId());
-// echo $order_id;
-
-$pdoStatementViewOrder = $pdo->prepare("SELECT * FROM orderDetail WHERE email = :email");
-$pdoStatementViewOrder->bindParam(":email",$email);
-$pdoStatementViewOrder->execute();
-$order = $pdoStatementViewOrder->fetchAll(PDO::FETCH_ASSOC);
-
-$pdoStatementViewBank = $pdo->prepare("SELECT * FROM tbbank WHERE status ='on'");
-$pdoStatementViewBank->execute();
-$Bank = $pdoStatementViewBank->fetchAll(PDO::FETCH_ASSOC);
-
-$hari_terakhir = date('d')+1;
-
-$totalBelanja = 0;
-$totalBerat = 0;
-
-
-// $user_ID = $_SESSION['user'];
-// $_SESSION['invoice'] = true;
-
-$no = 1;
 
 ?>
 
@@ -47,11 +42,11 @@ $no = 1;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../resource/img/Weco.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../../resource/img/Weco.png" type="image/x-icon">
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="../../resource/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../resource/bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <!-- custom css -->
-    <link rel="stylesheet" href="../../resource/css/invoice.css">
+    <link rel="stylesheet" href="../../../../resource/css/invoice.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -74,7 +69,7 @@ $no = 1;
     
         <div class="col-md-6 col-6">
         
-            <img width="150px" src="../../resource/img/output-onlinepngtools.png" alt="logo-kopi">
+            <img width="150px" src="../../../../resource/img/output-onlinepngtools.png" alt="logo-kopi">
 
         </div>
 
@@ -128,7 +123,7 @@ $no = 1;
             
             ?>
 
-            <a href="../index.php?page=home" class="btn btn-<?=$color?>"><?= $status ?></a>
+            <a href="../../index.php?page=pesananDetail" class="btn btn-<?=$color?>"><?= $status ?></a>
         
         </div>
     
@@ -181,17 +176,7 @@ $no = 1;
     
     </div>
 
-    <div class="row">
-    
-        <div class="col-md-8 col-8  pembayaran">
-        
-            <span>Untuk pembayaran menggunakan metode transfer:</span>
-            <?php foreach($Bank AS $row): ?>
-            <p class="mt-2">No Rek: <?= $row['rekening'] ?></p>
-            <p>Bank: <?= $row['nama_bank'] ?></p>
-            <?php endforeach; ?>
-
-        </div>
+    <div class="row mb-3">
 
         <div class="col-md-4 col-4">
         
@@ -210,12 +195,6 @@ $no = 1;
             
             </div>
                 
-            <div class="row mt-2 mb-3">
-            
-                <a href="#" class="btn btn-info">Kirim bukti transfer</a>
-            
-            </div>
-
         </div>
 
     </div>
@@ -223,7 +202,7 @@ $no = 1;
 
 </div>
 
-<script src="../../resource/popper/popper.min.js" ></script>
-<script src="../../resource/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+<script src="../../../../resource/popper/popper.min.js" ></script>
+<script src="../../../../resource/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
