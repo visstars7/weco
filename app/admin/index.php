@@ -99,6 +99,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
             </li>
             <?php endif; ?>
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=pesananDetail">Pesanan Detail</a></li>
+            <li class="list-sidebar"><a class="noto-sans" href="index.php?page=konfirmasi">Pembayaran</a></li>
             <li class="list-sidebar"><a class="noto-sans" href="index.php?page=wilayah">Wilayah</a></li>
         
         </ul>

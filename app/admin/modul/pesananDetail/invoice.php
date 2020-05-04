@@ -3,20 +3,23 @@
 include_once "../../../helper/helper.php";
 session_start();
 
-if(isset($_POST['email'])){
+if(isset($_POST['order_id'])){
 
     $pdo = PDO();
     
-    $email = $_POST['email'];
+    $order_id = $_POST['order_id'];
     
     // $order_id =  intval($pdo->lastInsertId());
     // echo $order_id;
     
-    $pdoStatementViewOrder = $pdo->prepare("SELECT * FROM orderDetail WHERE email = :email");
-    $pdoStatementViewOrder->bindParam(":email",$email);
+
+    // tborder
+    $pdoStatementViewOrder = $pdo->prepare("SELECT * FROM orderDetail WHERE order_id = :order_id");
+    $pdoStatementViewOrder->bindParam(":order_id",$order_id);
     $pdoStatementViewOrder->execute();
     $order = $pdoStatementViewOrder->fetchAll(PDO::FETCH_ASSOC);
-    
+
+    // tbbank
     $pdoStatementViewBank = $pdo->prepare("SELECT * FROM tbbank WHERE status ='on'");
     $pdoStatementViewBank->execute();
     $Bank = $pdoStatementViewBank->fetchAll(PDO::FETCH_ASSOC);

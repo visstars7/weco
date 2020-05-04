@@ -13,18 +13,18 @@ $orders = $pdoStatementOrders->fetchAll(PDO::FETCH_ASSOC);
 if(!isset($_POST['select'])){
 
 
-    $pdoStatementCustomer = $pdo->prepare("SELECT * FROM orderDetail ORDER BY nama DESC");
+    $pdoStatementCustomer = $pdo->prepare("SELECT * FROM orders ORDER BY nama DESC");
     $pdoStatementCustomer->execute();
-    $customer = $pdoStatementCustomer->fetchAll(PDO::FETCH_ASSOC);
+    $orders = $pdoStatementCustomer->fetchAll(PDO::FETCH_ASSOC);
 
 }else{
-    $nama_depan = $_POST['customer'];
+    $order_id = $_POST['customer'];
     // echo $cust_email;
 
-    $pdoStatementCustomer = $pdo->prepare("SELECT * FROM orderDetail WHERE nama_depan = :nama_depan");
-    $pdoStatementCustomer->bindParam(":nama_depan",$nama_depan);
+    $pdoStatementCustomer = $pdo->prepare("SELECT * FROM orders WHERE order_id = :order_id");
+    $pdoStatementCustomer->bindParam(":order_id",$order_id);
     $pdoStatementCustomer->execute();
-    $customer = $pdoStatementCustomer->fetchAll(PDO::FETCH_ASSOC);
+    $orders = $pdoStatementCustomer->fetchAll(PDO::FETCH_ASSOC);
     // var_dump($customer);
 }
 
@@ -38,7 +38,7 @@ $no = 1;
 
 ?>
 
-<?php if(!empty($customer)): ?>
+<?php if(!empty($orders)): ?>
 
 <div id="frame-nav-product" class="row mt-2">
 
@@ -57,7 +57,7 @@ $no = 1;
 
                 <select name="customer" id="wilayah">
                     <?php foreach($select AS $row): ?>
-                    <option value="<?=$row['nama_depan']?>"><?= $row['proses_id'] ?></option>
+                    <option value="<?=$row['order_id']?>"><?= $row['nama'] ?></option>
                     <?php endforeach; ?>
                 </select>
                 
@@ -106,15 +106,16 @@ $no = 1;
                         <td><?= $key['nama_kota']; ?></td>
                         <td><?= $key['nama_kec']; ?></td>
                         <td><?= $key['nama_prov']; ?></td>
-                <?php endforeach; ?>
-                    <form action="modul/pesananDetail/invoice.php" method="post">
-                        <td>
 
-                            <input type="hidden" name="email" value="<?=$select[0]['email']?>">
-                            <button class="btn btn-info">Invoice</button>
+                        <form action="modul/pesananDetail/invoice.php" method="post">
+                            <td>
+                                <input type="hidden" name="order_id" value="<?=$key['order_id']?>">
+                                <button class="btn btn-info">Invoice</button>
 
-                        </td>
-                    </form>
+                            </td>
+
+                        </form>
+                        <?php endforeach; ?>
 
                     </tr>
         
