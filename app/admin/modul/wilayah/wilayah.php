@@ -32,7 +32,7 @@ if(isset($_SESSION['message'])){
 
             <div id="frame-search">
             
-                <input type="search" class="input-form noto-sans-font" placeholder="Search Produk..">
+                <input type="search" class="input-form noto-sans-font" placeholder="Search Wilayah..">
                 <button name="search" class="search-btn noto-sans-font">search</button>
 
             </div>

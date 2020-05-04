@@ -10,6 +10,13 @@ $pdoStatementOrders = $pdo->prepare("SELECT * FROM orders ORDER BY nama DESC");
 $pdoStatementOrders->execute();
 $orders = $pdoStatementOrders->fetchAll(PDO::FETCH_ASSOC);
 
+if(empty($select)){
+
+    $pdoStatementDel = $pdo->prepare("DELETE FROM tborder");
+    $pdoStatementDel->execute();
+
+}
+
 if(!isset($_POST['select'])){
 
 
@@ -48,7 +55,7 @@ $no = 1;
 
             <div id="frame-search">
             
-                <input type="search" class="input-form noto-sans-font" placeholder="Search Customer..">
+                <input type="search" class="input-form noto-sans-font" placeholder="Search pesanan..">
                 <button name="search" class="search-btn noto-sans-font">search</button>
 
             </div>

@@ -43,7 +43,7 @@ $no = 1;
 
             <div id="frame-search">
             
-                <input type="search" class="input-form noto-sans-font" placeholder="Search Customer..">
+                <input type="search" class="input-form noto-sans-font" placeholder="Search Pesanan..">
                 <button name="search" class="search-btn noto-sans-font">search</button>
 
             </div>

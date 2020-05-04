@@ -21,7 +21,7 @@ $level  = mysqli_fetch_assoc($query);
 
 // jika level  === admin maka redirect ke halaman admin
 if($level['level'] !== "superadmin"){
-    Header('Location:../index.php?page=home&pesan=1');
+    Header('Location:../myprofile/myprofile.php?page=myProfile');
 }
 
 $pesanan = getAll("SELECT COUNT(proses_id) FROM tbonproses");
@@ -50,6 +50,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
 <div id="header-atas" class="row">
 
     <div id="image-frame" class="col-md-2 col-sm-6 col-xs-6">
+    
         <a href="../?page=home">
             <img src="<?=BASE_URL?>/resource/img/output-onlinepngtools.png" alt="kopi.png">
         </a>
