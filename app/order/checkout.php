@@ -1,6 +1,7 @@
 <?php 
 
 include_once "../helper/helper.php";
+
 session_start();
 $pdo = PDO();
 
@@ -212,7 +213,7 @@ $no = 1;
                 
             <div class="row mt-2 mb-3">
             
-                <a href="#" class="btn btn-info">Kirim bukti transfer</a>
+                <a href="../buktiPembayaran/buktiPembayaran.php" class="btn btn-info">Kirim bukti transfer</a>
             
             </div>
 

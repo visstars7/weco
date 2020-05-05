@@ -14,7 +14,7 @@ if(isset($_SESSION['error'])){
     unset($_SESSION['error']);
 } 
 
-echo $pesan;
+// echo $pesan;
 
 ?>
 

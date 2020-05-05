@@ -1,10 +1,19 @@
 <?php 
 
 include_once '../helper/helper.php';
-$pdo = PDO();
-$pdoStatementBank = $pdo->prepare("SELECT * FROM tbbank WHERE status='on'");
-$pdoStatementBank->execute();
-$Bank = $pdoStatementBank->fetchAll(PDO::FETCH_ASSOC);
+
+if(file_exists("controller.php")){
+
+    include_once "controller.php";
+}
+
+if(isset($_SESSION['alert'])){
+    // var_dump($_SESSION['alert']);
+    $pesan = $_SESSION['alert'];
+    echo "<script>alert('$pesan')</script>";
+    unset($_SESSION['alert']);
+}
+
 
 ?>
 
@@ -32,16 +41,17 @@ $Bank = $pdoStatementBank->fetchAll(PDO::FETCH_ASSOC);
             <div class="col-md-12">
             
             
-                <form action="" method="post" enctype="multipart/form-data">
-                <div class="form-group mt-5">
-                    <label for="bank">Pilih Bank</label>
-                    <select class="custom-select" name="bank" id="bank">
-                            <?php foreach($Bank AS $row): ?>
-                                <option value="<?=$row['bank_id']?>"><?= $row['nama_bank'] ?></option>
-                            <?php endforeach; ?>
-                    </select>
-                
-                </div>
+                <form action="controller.php" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group mt-5">
+                        <label for="bank">Pilih Bank</label>
+                        <select class="custom-select" name="bank" id="bank">
+                                <?php foreach($Bank AS $row): ?>
+                                    <option value="<?=$row['bank_id']?>"><?= $row['nama_bank'] ?></option>
+                                <?php endforeach; ?>
+                        </select>
+                    
+                    </div>
 
                     <div class="form-group">
                     
@@ -50,17 +60,11 @@ $Bank = $pdoStatementBank->fetchAll(PDO::FETCH_ASSOC);
 
                     </div>
 
-                    <div class="form-group">
-                    
-                        <label for='total_bayar'>Jumlah Total Pembayaran</label>
-                        <input class="form-control" type='number' name='jml_bayar' id='jml_bayar' placeholder='jumlah total pembayaran' required>
-
-                    </div>
 
                     <div class="custom-file mb-3">
                     
-                        <label class="custom-file-label" for='total_bayar'>Bukti Transfer</label>
-                        <input class="custom-file-input" type='file' name='transfer' id='transfer'>
+                        <label class="custom-file-label" for='total_bayar'>Bukti Gambar Transfer</label>
+                        <input class="custom-file-input" type='file' name='gambar_transfer' id='transfer'>
 
                     </div>
 
