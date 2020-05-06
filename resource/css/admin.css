@@ -2,6 +2,19 @@
 
 @media only screen and (min-width:300px){
 
+    #table-dashboard{
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        border-right: 2px solid #e3beb1;
+        border-bottom: 2px solid #e3beb1;
+    }
+
+    td.text-center.p-5 span {
+        font-size: 20px;
+        margin: 3px;
+    }
+
     div#frame-select {
         margin: 10px;
     }
@@ -97,9 +110,6 @@
         font-family: 'noto-sans';
     }
     
-    .noto-sans-font{
-        font-family: 'noto-sans';
-    }
     
     a.superadmin-name {
         color: #6C63FF;
@@ -115,6 +125,9 @@
         color: #b85a3c;
     }
     
+    .noto-sans-font{
+        font-family: 'noto-sans';
+    }
     
     #sidebar-list-frame {
         border-right: 2px solid rgba(184, 91, 60, 0.397);
@@ -213,6 +226,23 @@
 
 @media only screen and (min-width:768px){
 
+    td.text-center.p-5 span {
+        font-size: 20px;
+        margin: 3px;
+    }
+
+    .noto-sans-font{
+        font-family: 'noto-sans';
+    }
+
+    #table-dashboard{
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        border-right: 2px solid #e3beb1;
+        border-bottom: 2px solid #e3beb1;
+    }
+
     div#frame-select {
         margin: 00px;
     }
@@ -256,13 +286,42 @@
     li.list-sidebar {
         font-size: 13px;
     }
-
 }
 
 
 
 /* Desktop view */
 @media only screen and (min-width:1024px){
+
+    td.text-center.p-5 span {
+        font-size: 20px;
+        margin: 3px;
+    }
+
+
+    .custom-color{
+        text-decoration:none;
+        color: #B85A3C;
+    }
+    .custom-color:hover{
+        text-decoration:none;
+        color: #6C63FF;
+    }
+    .clicked{
+        color: #6C63FF;
+    }
+
+    .noto-sans-font{
+        font-family: 'noto-sans';
+    }
+
+    #table-dashboard {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        border-right: 2px solid #e3beb1;
+        border-bottom: 2px solid #e3beb1;
+    }
 
     div#frame-select {
         margin: 0px;

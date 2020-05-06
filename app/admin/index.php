@@ -43,6 +43,8 @@ $page = isset($_GET['page']) ? $_GET['page'] : false;
     <link rel="stylesheet" href="../../resource/css/admin.css">
     <!-- favicon -->
     <link rel="shortcut icon" href="../../resource/img/Weco.png" type="image/x-icon">
+    <!-- chart.Js -->
+    <script src="../../resource/chart.js/Chart.js"></script>
 
 </head>
 <body>
